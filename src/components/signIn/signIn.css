@@ -2,6 +2,7 @@
     height: 100vh;
     background: #76b852;
     background: linear-gradient(to left, #1D9129, #2FB53D);
+    overflow: hidden;
 }
 
 .login-page {
@@ -51,9 +52,10 @@
     text-transform: uppercase;
     outline: 0;
     background: #1D9129;
-    width: 100%;
+    width: 50%;
+    height: 40px;
+    border-radius: 50px;
     border: 0;
-    padding: 15px;
     color: #FFFFFF;
     font-size: 14px;
     cursor: pointer;

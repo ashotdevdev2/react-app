@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import './signIn.css'
 import {connect} from 'react-redux'
-import {signIn, signUp} from "../../store/actions/auth";
+import {clearError, signIn, signUp} from "../../store/actions/auth";
 import {Redirect} from 'react-router-dom'
 
 class SignIn extends Component{
@@ -14,6 +14,7 @@ class SignIn extends Component{
     }
 
     toggleForm = () => {
+        this.props.clearError()
         this.setState({
             showRegisterForm: !this.state.showRegisterForm
         })
@@ -59,6 +60,7 @@ class SignIn extends Component{
                                 <input onChange={this.changeInput} id="password" type="password" placeholder="password"/>
                                 <input onChange={this.changeInput} id="email" type="text" placeholder="email address"/>
                                 <button onClick={this.handleSignUp}>create</button>
+                                {error && <p><small style={{color: 'red'}}>{error}</small></p>}
                                 <p className="message">Already registered? <a onClick={this.toggleForm} href="#">Sign In</a></p>
                             </form>
                         ) : (
@@ -66,7 +68,7 @@ class SignIn extends Component{
                                 <input onChange={this.changeInput} id="email" type="text" placeholder="email"/>
                                 <input onChange={this.changeInput} id="password" type="password" placeholder="password"/>
                                 <button onClick={this.handleSignIn}>login</button>
-                                {error && <small style={{color: 'red'}}>Login failed</small>}
+                                {error && <p><small style={{color: 'red'}}>Login failed</small></p>}
                                 <p className="message">Not registered? <a onClick={this.toggleForm} href="#">Create an account</a></p>
                             </form>
                         )}
@@ -87,7 +89,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         signIn: (info) => dispatch(signIn(info)),
-        signUp: (newUser) => dispatch(signUp(newUser))
+        signUp: (newUser) => dispatch(signUp(newUser)),
+        clearError: () => dispatch(clearError())
     }
 }
 
