@@ -1,0 +1,75 @@
+.fixedBar {
+    position: fixed;
+    width: 1100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 55px;
+    margin: 0 auto;
+}
+
+.fixedBar ul {
+    background-color: #4C4C4C;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.fixedBar ul li {
+    margin-right: 70px !important;
+}
+
+.fixedBar ul .ant-menu-item {
+    color: #FFFFFF;
+}
+
+.fixedBar ul li span {
+    margin-bottom: 18px;
+    font-size: 30px !important;
+}
+
+.fixedBar ul .ant-menu-item-selected {
+    color: #828282 !important;
+}
+
+.fixedBar ul .ant-menu-item-active {
+    color: #828282 !important;
+}
+
+@media (max-width: 1100px) {
+    .fixedBar {
+        width: 900px;
+    }
+}
+
+@media (max-width: 900px) {
+    .fixedBar {
+        width: 700px;
+    }
+}
+
+@media (max-width: 700px) {
+    .fixedBar {
+        width: 500px;
+    }
+}
+
+@media (max-width: 500px) {
+    .info {
+        height: 380px;
+    }
+    .fixedBar {
+        width: 300px;
+    }
+}
+
+@media (max-width: 300px) {
+    .fixedBar {
+        width: 100px;
+    }
+}
+
+@media (min-width: 2500px) {
+    .fixedBar {
+        width: 2000px;
+    }
+}
